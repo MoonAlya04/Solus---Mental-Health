@@ -9,40 +9,113 @@
             href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap"
             rel="stylesheet"
         />
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+            defer
+        ></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="icon" type="image/x-icon" href="/img/heart.png" />
     </head>
     <body>
-        <header class="w-full fixed ">
-            <div class="m-auto m-0 py-8 max-w-[1440px] px-[100px]">
-                <nav class="flex justify-between text-[#00373E] items-center">
-                    <ul class="flex gap-[70px]">
-                        <li class="menu-list">
-                            <a href="#" class="">Home</a>
-                        </li>
-                        <li class="menu-list">
-                            <a href="#" class="menu-link">About</a>
-                        </li>
-                        <li class="menu-list">
-                            <a href="#" class="menu-link">Services</a>
-                        </li>
+        <header
+            class="w-full bg-[#F7F6F4] z-50 fixed"
+            x-data="{ menuOpen: false }"
+        >
+            <div
+                class="max-w-[1440px] w-full mx-auto py-[40px] px-2 md:px-[100px]"
+            >
+                <nav
+                    class="flex flex-nowrap justify-between items-center text-[#00373E] gap-y-4 relative"
+                >
+                    <ul class="hidden gap-4 md:flex flex-row lg:gap-12">
+                        <li><a class="text-[18px]" href="#">Home</a></li>
+                        <li><a class="text-[18px]" href="#">About</a></li>
+                        <li><a class="text-[18px]" href="#">Services</a></li>
                     </ul>
-                    <div class="">
-                        <img src="img/Solus.png" alt="" />
+                    <div class="w-full md:w-[120px] flex justify-center">
+                        <img
+                            class="w-[120px] h-auto"
+                            src="img/Solus.png"
+                            alt="Solus Logo"
+                        />
                     </div>
-                    <ul class="flex gap-[70px]">
-                        <li class="menu-list">
-                            <a href="#" class="menu-link">Therapists</a>
-                        </li>
-                        <li class="menu-list">
-                            <a href="#" class="menu-link">Resources</a>
-                        </li>
-                        <li class="menu-list">
-                            <a href="#" class="menu-link">Contact</a>
-                        </li>
+                    <ul class="hidden gap-4 md:flex flex-row lg:gap-12">
+                        <li><a class="text-[18px]" href="#">Therapists</a></li>
+                        <li><a class="text-[18px]" href="#">Resources</a></li>
+                        <li><a class="text-[18px]" href="#">Contact</a></li>
                     </ul>
+                    <button
+                        class="md:hidden absolute right-0 top-0 mt-2 mr-2"
+                        @click="menuOpen = !menuOpen"
+                        aria-label="Toggle Menu"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"
+                            />
+                        </svg>
+                    </button>
                 </nav>
+                <div class="mt-4 md:hidden" x-show="menuOpen" x-transition>
+                    <ul class="flex flex-col items-end gap-4 text-[#00373E]">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Therapists</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
+        <main class="bg-[#F7F6F4] py-[80px] pt-[120px]">
+            <div
+                class="m-auto max-w-[1440px] px-[100px] flex justify-center items-center"
+            >
+                <div
+                    class="sm:h-[668px] max-w-[1240px] w-[100%] h-[400px] bg-[#F9E6D0] rounded-[70px] relative overflow-hidden"
+                >
+                    <div class="absolute left-0 bottom-0">
+                        <img
+                            class="w-100% h-100% object-contain"
+                            src="img/Illustration_2.png"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="absolute right-0">
+                        <img class="w-100% h-100% object-contain"
+                        src="img/Illustration_1.png" alt="" />
+                    </div>
+                    <div
+                        class="flex px-[300px] text-center h-[100%] justify-center items-center flex-col absolute"
+                    >
+                        <h1 class="text-[70px] font-bold text-[#00373E]">
+                            Support for Your Mental Well-being
+                        </h1>
+                        <p
+                            class="mt-[16px] mb-[46px] text-[24px] font-noremal text-[#00373E]"
+                        >
+                            Connect with licensed therapists, counselors, and
+                            wellness coaches to support your journey.
+                        </p>
+                        <button
+                            class="py-[16px] px-[40px] text-[#ffffff] rounded-[100px] text-[20px] font-semibold bg-[#00373E]"
+                        >
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
